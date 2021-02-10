@@ -42,3 +42,12 @@ body {
 .layout_post>#post {
     background: rgba(255, 255, 255, .9);
 }
+
+
+/*自定义Butterfly主题字体*/
+@font-face {
+    font-family: 'ZCOOL';
+    font-weight: 'normal';
+	font-style: 'normal';
+    src: url('https://cdn.jsdelivr.net/gh/deajax/FontFace-CDN/src/fonts/ZCOOL/zcool KuaiLeTi2016.ttf') format('truetype');
+}
