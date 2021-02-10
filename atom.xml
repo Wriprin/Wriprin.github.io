@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wriprin.gitee.io/"/>
-  <updated>2020-12-06T05:05:10.514Z</updated>
+  <updated>2021-02-10T18:15:52.059Z</updated>
   <id>http://wriprin.gitee.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ButterFly-Modify</title>
+    <link href="http://wriprin.gitee.io/2021/02/11/butterfly-modify/"/>
+    <id>http://wriprin.gitee.io/2021/02/11/butterfly-modify/</id>
+    <published>2021-02-10T18:04:39.000Z</published>
+    <updated>2021-02-10T18:15:52.059Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Butterfly-Modify-Memo&quot;&gt;&lt;a href=&quot;#Butterfly-Modify-Memo&quot; class=&quot;headerlink&quot; title=&quot;Butterfly-Modify Memo&quot;&gt;&lt;/a&gt;Butterfly-Modify
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Memo" scheme="http://wriprin.gitee.io/categories/Memo/"/>
+    
+    
+      <category term="tech" scheme="http://wriprin.gitee.io/tags/tech/"/>
+    
+  </entry>
   
   <entry>
     <title>IPOD-Dev-Doc</title>

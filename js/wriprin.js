@@ -53,10 +53,10 @@ document.getElementById("go-up").innerHTML += top_up;
     // 调用气泡方法
     bubble();
     
-    /* xkTool */
-    var wriprin = new xkTool();
-    //页脚养鱼 v3.1.1
-    wriprin.footFish();
+    // /* xkTool */
+    // var wriprin = new xkTool();
+    // //页脚养鱼 v3.1.1
+    // wriprin.footFish();
 
     })
 
