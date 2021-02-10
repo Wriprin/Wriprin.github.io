@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Wriprin&#39;s Blog</title>
+  
+  <subtitle>Simple Life</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://wriprin.gitee.io/"/>
+  <updated>2020-12-06T05:05:10.514Z</updated>
+  <id>http://wriprin.gitee.io/</id>
+  
+  <author>
+    <name>Wriprin</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IPOD-Dev-Doc</title>
+    <link href="http://wriprin.gitee.io/2020/12/06/ipod-dev-doc/"/>
+    <id>http://wriprin.gitee.io/2020/12/06/ipod-dev-doc/</id>
+    <published>2020-12-06T05:01:33.000Z</published>
+    <updated>2020-12-06T05:05:10.514Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;IPOD-Development-Doc&quot;&gt;&lt;a href=&quot;#IPOD-Development-Doc&quot; class=&quot;headerlink&quot; title=&quot;IPOD Development Doc&quot;&gt;&lt;/a&gt;&lt;strong&gt;IPOD Development
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Note" scheme="http://wriprin.gitee.io/categories/Note/"/>
+    
+    
+      <category term="devDoc" scheme="http://wriprin.gitee.io/tags/devDoc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git</title>
+    <link href="http://wriprin.gitee.io/2020/11/22/git/"/>
+    <id>http://wriprin.gitee.io/2020/11/22/git/</id>
+    <published>2020-11-22T00:22:10.000Z</published>
+    <updated>2020-11-22T01:11:46.529Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Git分布式版本控制工具&quot;&gt;&lt;a href=&quot;#Git分布式版本控制工具&quot; class=&quot;headerlink&quot; title=&quot;Git分布式版本控制工具&quot;&gt;&lt;/a&gt;Git分布式版本控制工具&lt;/h2&gt;&lt;h2 id=&quot;1-Git概述&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Note" scheme="http://wriprin.gitee.io/categories/Note/"/>
+    
+    
+      <category term="Git" scheme="http://wriprin.gitee.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaMemo</title>
+    <link href="http://wriprin.gitee.io/2020/11/15/java-day-01/"/>
+    <id>http://wriprin.gitee.io/2020/11/15/java-day-01/</id>
+    <published>2020-11-15T06:11:09.000Z</published>
+    <updated>2020-11-15T14:20:32.138Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-Java概述&quot;&gt;&lt;a href=&quot;#1-Java概述&quot; class=&quot;headerlink&quot; title=&quot;1. Java概述&quot;&gt;&lt;/a&gt;1. Java概述&lt;/h2&gt;&lt;h3 id=&quot;1-1-Java语言发展史（了解）&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://wriprin.gitee.io/categories/Java/"/>
+    
+    
+      <category term="JavaMemo" scheme="http://wriprin.gitee.io/tags/JavaMemo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown Memo</title>
+    <link href="http://wriprin.gitee.io/2020/07/19/markdown/"/>
+    <id>http://wriprin.gitee.io/2020/07/19/markdown/</id>
+    <published>2020-07-19T00:21:00.000Z</published>
+    <updated>2020-11-22T01:04:38.084Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;Markdown基本语法&quot;&gt;&lt;a href=&quot;#Markdown基本语法&quot; class=&quot;headerlink&quot; title=&quot;Markdown基本语法&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Note" scheme="http://wriprin.gitee.io/categories/Note/"/>
+    
+    
+      <category term="Markdown" scheme="http://wriprin.gitee.io/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>邮件服务器的架设与使用</title>
+    <link href="http://wriprin.gitee.io/2020/06/08/you-jian-fu-wu-qi-de-jia-she-yu-shi-yong/"/>
+    <id>http://wriprin.gitee.io/2020/06/08/you-jian-fu-wu-qi-de-jia-she-yu-shi-yong/</id>
+    <published>2020-06-08T07:00:40.000Z</published>
+    <updated>2020-06-08T14:21:34.813Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;实验目的&quot;&gt;&lt;a href=&quot;#实验目的&quot; class=&quot;headerlink&quot; title=&quot;实验目的&quot;&gt;&lt;/a&gt;实验目的&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;学习并掌握邮件服务器的安装和配置方法。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="网络原理" scheme="http://wriprin.gitee.io/categories/%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/"/>
+    
+    
+      <category term="Mail Sever" scheme="http://wriprin.gitee.io/tags/Mail-Sever/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>N1-YYF固件</title>
+    <link href="http://wriprin.gitee.io/2020/06/07/n1-yyf-gu-jian/"/>
+    <id>http://wriprin.gitee.io/2020/06/07/n1-yyf-gu-jian/</id>
+    <published>2020-06-07T06:57:01.000Z</published>
+    <updated>2021-02-10T11:48:27.428Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;开封验货&quot;&gt;&lt;a href=&quot;#开封验货&quot; class=&quot;headerlink&quot; title=&quot;开封验货&quot;&gt;&lt;/a&gt;开封验货&lt;/h3&gt;&lt;h4 id=&quot;Pre&quot;&gt;&lt;a href=&quot;#Pre&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Hardware" scheme="http://wriprin.gitee.io/categories/Hardware/"/>
+    
+    
+      <category term="tech" scheme="http://wriprin.gitee.io/tags/tech/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>66&amp;壮壮</title>
+    <link href="http://wriprin.gitee.io/2020/06/07/66-zhuang-zhuang/"/>
+    <id>http://wriprin.gitee.io/2020/06/07/66-zhuang-zhuang/</id>
+    <published>2020-06-07T06:11:09.000Z</published>
+    <updated>2021-02-10T14:24:50.036Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;壮王爷肾结石之旅&quot;&gt;&lt;a href=&quot;#壮王爷肾结石之旅&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Mlog" scheme="http://wriprin.gitee.io/categories/Mlog/"/>
+    
+    
+      <category term="Diary" scheme="http://wriprin.gitee.io/tags/Diary/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Web服务器配置</title>
+    <link href="http://wriprin.gitee.io/2020/06/03/web-fu-wu-qi-pei-zhi/"/>
+    <id>http://wriprin.gitee.io/2020/06/03/web-fu-wu-qi-pei-zhi/</id>
+    <published>2020-06-03T13:16:13.000Z</published>
+    <updated>2020-06-08T09:24:14.631Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;IIS&quot;&gt;&lt;a href=&quot;#IIS&quot; class=&quot;headerlink&quot; title=&quot;IIS&quot;&gt;&lt;/a&gt;IIS&lt;/h3&gt;&lt;h4 id=&quot;利用IIS配置一个网站&quot;&gt;&lt;a href=&quot;#利用IIS配置一个网站&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="网络原理" scheme="http://wriprin.gitee.io/categories/%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/"/>
+    
+    
+      <category term="IIS&amp;&amp;Wampsever" scheme="http://wriprin.gitee.io/tags/IIS-Wampsever/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://wriprin.gitee.io/2020/06/02/hello-world/"/>
+    <id>http://wriprin.gitee.io/2020/06/02/hello-world/</id>
+    <published>2020-06-02T03:50:40.000Z</published>
+    <updated>2020-06-07T06:48:32.325Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;还没想好写什么,就先鸽了吧.😳&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;script&gt;
+       
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Mlog" scheme="http://wriprin.gitee.io/categories/Mlog/"/>
+    
+    
+      <category term="Diary" scheme="http://wriprin.gitee.io/tags/Diary/"/>
+    
+  </entry>
+  
+</feed>

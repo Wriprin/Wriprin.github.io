@@ -1,0 +1,331 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wriprin's Blog - Simple Life</title><meta name="description" content="全栈攻城狮"><meta name="keywords" content="HTML, CSS, JavaScript, JQuery, React, Vue.js"><meta name="author" content="Wriprin"><meta name="copyright" content="Wriprin"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://wriprin.gitee.io/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta property="og:type" content="website"><meta property="og:title" content="Wriprin's Blog"><meta property="og:url" content="http://wriprin.gitee.io/"><meta property="og:site_name" content="Wriprin's Blog"><meta property="og:description" content="全栈攻城狮"><meta property="og:image" content="http://cdn.jsdelivr.net/gh/Wriprin/Wriprin-Gallery/Gallery/wriprin.png"><meta property="article:published_time" content="2021-02-10T15:19:06.406Z"><meta property="article:modified_time" content="2021-02-10T15:19:06.406Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: true,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false,
+  postUpdate: '2021-02-10 23:19:06'
+}</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@master/Hexo/css/flink.min.css"><link rel="stylesheet" href="/css/wriprin.css"><link rel="stylesheet" href="/css/scroll.css"><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Wriprin's Blog" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="http://cdn.jsdelivr.net/gh/Wriprin/Wriprin-Gallery/Gallery/wriprin.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">9</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">8</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 媒体</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/bangumis/"><i class="fa-fw fab fa-youtube"></i><span> 番剧</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书单</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/box/"><i class="fa-fw fab fa-xbox"></i><span> 聚宝盒</span></a></div><div class="menus_item"><a class="site-page" href="/talk/"><i class="fa-fw far fa-comment"></i><span> 微语</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/gallery/"><i class="fa-fw far fa-image"></i><span> 相册</span></a></li><li><a class="site-page" href="/home/"><i class="fa-fw fab fa-phoenix-framework"></i><span> 主页</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw far fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><header class="full_page" id="page-header" style="background-image: url(http://cdn.jsdelivr.net/gh/Wriprin/Wriprin-Gallery/Gallery/G3.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Wriprin's Blog</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 媒体</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/bangumis/"><i class="fa-fw fab fa-youtube"></i><span> 番剧</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书单</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/box/"><i class="fa-fw fab fa-xbox"></i><span> 聚宝盒</span></a></div><div class="menus_item"><a class="site-page" href="/talk/"><i class="fa-fw far fa-comment"></i><span> 微语</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/gallery/"><i class="fa-fw far fa-image"></i><span> 相册</span></a></li><li><a class="site-page" href="/home/"><i class="fa-fw fab fa-phoenix-framework"></i><span> 主页</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw far fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">Wriprin's Blog</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/wriprin" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:wriprin@gmail.com" target="_blank" title="Email"><i class="fab fa-google"></i></a><a class="social-icon" href="https://steamcommunity.com/id/wriprin/" target="_blank" title="Steam"><i class="fab fa-steam"></i></a><a class="social-icon" href="https://t.me/wriprin/" target="_blank" title="TG"><i class="fab fa-telegram"></i></a></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/12/06/ipod-dev-doc/" title="IPOD-Dev-Doc">     <img class="post_bg" data-src="http://cdn.jsdelivr.net/gh/Wriprin/Wriprin-Gallery/Gallery/G3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="IPOD-Dev-Doc"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/06/ipod-dev-doc/" title="IPOD-Dev-Doc">IPOD-Dev-Doc</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-12-06 13:01:33"><i class="far fa-calendar-alt"></i>2020-12-06</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Note/">Note</a></span></div><div class="content">IPOD Development Doc
+💫 Github
+
+&gt; Read Songs From Phone Part - 1
+commit the viewpagers and the style of tabindicator.
+
+1. Download  the TabLayout.    Tip1, Tip2&lt;com.google.android.material.tabs.TabLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark"
+    android:id="@+id/tab_layout"
+    app:tabIndicatorFullWidth="true"
+    app:tabIndicatorGravity="center"
+    app:tabTextColor="@color/colorAccent"
+    app:tab ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/22/git/" title="Git">     <img class="post_bg" data-src="/true" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/22/git/" title="Git">Git</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-11-22 08:22:10"><i class="far fa-calendar-alt"></i>2020-11-22</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Note/">Note</a></span></div><div class="content">Git分布式版本控制工具1. Git概述1.1 Git历史Git 诞生于一个极富纷争大举创新的年代。Linux 内核开源项目有着为数众多的参与者。 绝大多数的 Linux 内核维护工作都花在了提交补丁和保存归档的繁琐事务上（1991－2002年间）。 到 2002 年，整个项目组开始启用一个专有的分布式版本控制系统 BitKeeper 来管理和维护代码。
+到了 2005 年，开发 BitKeeper 的商业公司同 Linux 内核开源社区的合作关系结束，他们收回了 Linux 内核社区免费使用 BitKeeper 的权力。 这就迫使 Linux 开源社区（特别是 Linux 的缔造者 Linus Torvalds）基于使用 BitKeeper 时的经验教训，开发出自己的版本系统。 
+他们对新的系统制订了若干目标：
+
+速度
+
+简单的设计
+
+对非线性开发模式的强力支持（允许成千上万个并行开发的分支）
+
+完全分布式
+
+有能力高效管理类似 Linux 内核一样的超大规模项目（速度和数据量）
+
+
+1.2 Git与SVN对比SVN是集中式版本控制系统，版本库是集中放在中央服务器的，而开发人员工作的 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/15/java-day-01/" title="JavaMemo">     <img class="post_bg" data-src="/true" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaMemo"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/15/java-day-01/" title="JavaMemo">JavaMemo</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-11-15 14:11:09"><i class="far fa-calendar-alt"></i>2020-11-15</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Java/">Java</a></span></div><div class="content">1. Java概述1.1 Java语言发展史（了解）语言：人与人交流沟通的表达方式
+计算机语言：人与计算机之间进行信息交流沟通的一种特殊语言
+Java语言是美国Sun公司（Stanford University Network）在1995年推出的计算机语言
+Java之父：詹姆斯·高斯林（James Gosling）
+2009年，Sun公司被甲骨文公司收购，所以我们现在访问oracle官网即可：https://www.oracle.com 
+当前，我们课程使用的JDK版本：11.0
+1.2 Java语言跨平台原理（理解）Java程序并非是直接运行的，Java编译器将Java源程序编译成与平台无关的字节码文件(class文件)，然后由Java虚拟机（JVM）对字节码文件解释执行。所以在不同的操作系统下，只需安装不同的Java虚拟机即可实现java程序的跨平台。
+1.3 JRE和JDK（记忆）JVM（Java Virtual Machine），Java虚拟机
+JRE（Java Runtime Environment），Java运行环境，包含了JVM和Java的核心类库（Java API）
+J ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/07/19/markdown/" title="Markdown Memo">     <img class="post_bg" data-src="http://cdn.jsdelivr.net/gh/Wriprin/Wriprin-Gallery/Gallery/G3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Markdown Memo"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/07/19/markdown/" title="Markdown Memo">Markdown Memo</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-07-19 08:21:00"><i class="far fa-calendar-alt"></i>2020-07-19</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Note/">Note</a></span></div><div class="content">Markdown基本语法
+PS：指令后空格才可有效。  
+
+Markdown all in one(Plug)
+强调：
+Ctrl+B–&gt;粗体。  
+Ctrl+I–&gt;斜体。
+
+
+列表：
+1.+Enter直接换为2.；
+Enter+Tab切为子标题。
+
+
+超链接：选中文字+ctrl+v。
+插入图片：复制图片+ctrl+alt+v
+标记：`文字`
+eg
+
+
+区块引用：一级嵌套：&gt; /二级嵌套：&gt;&gt;
+Outside
+
+Inside
+
+
+
+代码区块：  ```+代码高亮标签+Enter+```
+
+echo&lt;&lt;"Hello World";
+
+反斜杠：\  相当于反转义作用。使符号成为普通符号。
+
+Markdown代码高亮标记大全👉Author用  Markdown 写文档的话经常会用到代码的语法高亮，这里列出了常用的语法高亮标签，前面是标签，括号里是对应的文件扩展名。
+Syntax Highlight  
+
+Cucumber (‘*.feature’)
+abap (‘*.abap’)
+ada (‘.adb’, ‘.ads’, ‘*.ada’)
+ahk ( ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/06/08/you-jian-fu-wu-qi-de-jia-she-yu-shi-yong/" title="邮件服务器的架设与使用">     <img class="post_bg" data-src="http://cdn.jsdelivr.net/gh/Wriprin/Wriprin-Gallery/Gallery/G3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="邮件服务器的架设与使用"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/08/you-jian-fu-wu-qi-de-jia-she-yu-shi-yong/" title="邮件服务器的架设与使用">邮件服务器的架设与使用</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-08 15:00:40"><i class="far fa-calendar-alt"></i>2020-06-08</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">网络原理</a></span></div><div class="content">实验目的
+学习并掌握邮件服务器的安装和配置方法。
+
+实验环境VmWare pro(Win10 x 64)
+实验内容Winmail 安装
+Winmail 配置1.初始化邮箱
+2. 登陆管理工具
+密码为安装时设定的初始密码
+
+3. 添加域名绑定
+4. 在新域名下添加用户
+Winmail测试
+收发信测试(https://localhost:6080) 
+
+1. 登录初始化的邮箱账户Wriprin  
+2. 向新建用户Yolo发送测试邮件
+3. 退出登录
+4. 登录新建用户Yolo
+5. 接收邮件
+实验思考1. SMTP是什么协议？作用是什么？默认占用的端口号是？
+
+SMTP是简单邮件传输协议，是一个相对简单的基于文本的协议。
+相当于中转站，将邮件发送到客户端。  
+25
+
+
+2. POP是什么协议？作用是什么？默认占用的端口号是？
+
+POP是邮局协议。
+主要用于支持使用客户端远程管理在服务器上的电子邮件。
+110
+
+
+3. 邮件服务器域名是否可以随意设置
+
+如果是在内网中(比如做实验)，那怎么设置都可以。  
+但如果是想在外网上正常使用，必须用绑定的对应域名。
+
+
+4. 通过本邮件的服务器是 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/07/n1-yyf-gu-jian/" title="N1-YYF固件">     <img class="post_bg" data-src="/true" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="N1-YYF固件"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/07/n1-yyf-gu-jian/" title="N1-YYF固件">N1-YYF固件</a><div class="article-meta-wrap"><span class="article-meta"><i class="fas fa-thumbtack article-meta__icon sticky"></i><span class="sticky">置顶</span><span class="article-meta__separator">|</span></span><time class="post-meta__date" title="发表于 2020-06-07 14:57:01"><i class="far fa-calendar-alt"></i>2020-06-07</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Hardware/">Hardware</a></span></div><div class="content">开封验货Pre
+至于为什么要买N1，然后自己刷固件就不解释了，自行Google咯。  
+
+ 玩什么盒子呢，到了到了–&gt;真香，Pdd(Eternal god🐱‍🏍)  
+Open
+
+虽说斐讯跑路了但路由和盒子真的是业界楷模。
+
+固件下载
+Lilith固件
+Rush固件
+Webpad固件(pwd:ckj05e)
+YYF固件
+N1降级线刷工具、烧录工具、link2SD软件
+
+N1-&gt;YYF接线
+双公线：电脑🔗N1
+
+HDMI线：显示屏🔗N1
+
+USB线：鼠标🔗N1
+
+网线：Wan口🔗路由器LAN口
+
+最好让双公线的口和HDMI线的口紧挨着。
+
+
+
+进入root模式鼠标点固件版本四次，打开adb模式，并把IP记下来。
+N1降级
+因为该记录篇呢是在我都完成之后才准备写的，所以之后的步骤也不会有具体的操作演示，毕竟只是纪录片，有时间再补吧😎。  
+
+先输入数字2，会让你输入IP地址，等待降级成功。
+进入线刷模式
+千万别用刚刚的降级工具进行线刷操作（别问为什么，我在这步耗了整整1h😩）接下来将展示我刷固件过程中的两道巨坎儿    
+
+1.在线刷前一定要手动添加过时驱动。  ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/06/07/66-zhuang-zhuang/" title="66&amp;壮壮">     <img class="post_bg" data-src="/true" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="66&amp;壮壮"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/07/66-zhuang-zhuang/" title="66&amp;壮壮">66&amp;壮壮</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-07 14:11:09"><i class="far fa-calendar-alt"></i>2020-06-07</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Mlog/">Mlog</a></span></div><div class="content">壮王爷肾结石之旅
+😳借此警戒自己，不久坐，多运动，少喝饮料🍹，多喝热水🥛。
+
+ Watch the video
+ 
+
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+  ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/03/web-fu-wu-qi-pei-zhi/" title="Web服务器配置">     <img class="post_bg" data-src="http://cdn.jsdelivr.net/gh/Wriprin/Wriprin-Gallery/Gallery/G3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Web服务器配置"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/03/web-fu-wu-qi-pei-zhi/" title="Web服务器配置">Web服务器配置</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-03 21:16:13"><i class="far fa-calendar-alt"></i>2020-06-03</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">网络原理</a></span></div><div class="content">IIS利用IIS配置一个网站.
+IIS配置网站
+
+开启网站的目录浏览功能
+PS：报错很有可能是未开启目录浏览权限和文件夹共享 Everyone 。
+
+
+IIS访问
+
+删除.exe的mime类型，看能否下载.exe文件
+IIS删除mime-exe类型 
+IIS删除mime-exe类型后访问   
+很显然，当我们删除了指定的mime类型后，是无法下载对应类型的文件的。
+
+
+
+Wampsever
+Tip:Wamp -&gt; Windows, Apache, Mysql, PHP.   
+
+相关配置Apache目录下文件夹：   
+
+bin-&gt;存放常用命令，如Httped等。
+cgi-bin-&gt;存放Linux下的常用命令。
+conf-&gt;存放配置文件，如conf等。
+error-&gt;存放错误记录。
+htdocs-&gt;存放站点文件，网站的根目录。
+
+Apache配置1.1 主站点的基本配置  (./httped.conf)
+Listen 80 -&gt; 服务器监听的端口号。 
+
+通过将此配置项设置为 localhost的 IP 地址，Apache 将只侦听来自本地主机 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="http://cdn.jsdelivr.net/gh/Wriprin/Wriprin-Gallery/Gallery/wriprin.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Wriprin</div><div class="author-info__description">全栈攻城狮</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">9</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">8</div></a></div><div class="card-info-data-item is-center">     <a href="/categories"><div class="headline">分类</div><div class="length_num">5</div></a></div></div><div class="card-info-bookmark is-center"><button class="button--animated" id="bookmark-it" type="button" title="加入书签"><i class="fas fa-bookmark"></i><span>加入书签</span></button></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/wriprin" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:wriprin@gmail.com" target="_blank" title="Email"><i class="fab fa-google"></i></a><a class="social-icon" href="https://steamcommunity.com/id/wriprin/" target="_blank" title="Steam"><i class="fab fa-steam"></i></a><a class="social-icon" href="https://t.me/wriprin/" target="_blank" title="TG"><i class="fab fa-telegram"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">站点迁移ing~<img src="http://cdn.jsdelivr.net/gh/Wriprin/Wriprin-Gallery/Gallery/lowing.gif"></div></div></div><div class="card-widget card-pixiv"><div class="card-content"><div class="item-headline"><i class="fa fa-image" aria-hidden="true"></i><span>Pixiv日榜Top50</span><iframe src="https://cloud.mokeyjay.com/pixiv" frameborder="0" style="width:99%;height:380px;margin:0;"></iframe></div></div></div><div class="card-widget card-calendar"><div class="card-content"><div class="item-headline"><i class="far fa-calendar-alt" aria-hidden="true"></i><span>写作日历</span></div><div class="widget-wrap"></div><div class="widget" id="calendar"></div></div></div><div class="card-widget card-map"><div class="card-content"><div class="item-headline"><i class="fa fa-globe-asia" aria-hidden="true"></i><span>访客地图</span></div><script id="clustrmaps" type="text/javascript" defer="defer" src="//clustrmaps.com/map_v2.js?d=KAjlhvFhLXRvezqFpwZq4ujcJqLF2BlL8YnFe1n6N1Q&amp;cl=ffffff&amp;w=a"></script></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a href="/2020/12/06/ipod-dev-doc/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="http://cdn.jsdelivr.net/gh/Wriprin/Wriprin-Gallery/Gallery/G3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="IPOD-Dev-Doc" alt="IPOD-Dev-Doc"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/12/06/ipod-dev-doc/" title="IPOD-Dev-Doc">IPOD-Dev-Doc</div><time class="aside-post_meta post-meta__date" title="发表于 2020-12-06 13:01:33">2020-12-06</time></div></a></div><div class="aside-recent-post"><a href="/2020/11/22/git/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/true" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Git" alt="Git"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/11/22/git/" title="Git">Git</div><time class="aside-post_meta post-meta__date" title="发表于 2020-11-22 08:22:10">2020-11-22</time></div></a></div><div class="aside-recent-post"><a href="/2020/11/15/java-day-01/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/true" onerror="this.onerror=null;this.src='/img/404.jpg'" title="JavaMemo" alt="JavaMemo"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/11/15/java-day-01/" title="JavaMemo">JavaMemo</div><time class="aside-post_meta post-meta__date" title="发表于 2020-11-15 14:11:09">2020-11-15</time></div></a></div><div class="aside-recent-post"><a href="/2020/07/19/markdown/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="http://cdn.jsdelivr.net/gh/Wriprin/Wriprin-Gallery/Gallery/G3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Markdown Memo" alt="Markdown Memo"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/07/19/markdown/" title="Markdown Memo">Markdown Memo</div><time class="aside-post_meta post-meta__date" title="发表于 2020-07-19 08:21:00">2020-07-19</time></div></a></div><div class="aside-recent-post"><a href="/2020/06/08/you-jian-fu-wu-qi-de-jia-she-yu-shi-yong/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="http://cdn.jsdelivr.net/gh/Wriprin/Wriprin-Gallery/Gallery/G3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="邮件服务器的架设与使用" alt="邮件服务器的架设与使用"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/06/08/you-jian-fu-wu-qi-de-jia-she-yu-shi-yong/" title="邮件服务器的架设与使用">邮件服务器的架设与使用</div><time class="aside-post_meta post-meta__date" title="发表于 2020-06-08 15:00:40">2020-06-08</time></div></a></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Hardware/"><span class="card-category-list-name">Hardware</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Java/"><span class="card-category-list-name">Java</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Mlog/"><span class="card-category-list-name">Mlog</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Note/"><span class="card-category-list-name">Note</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/"><span class="card-category-list-name">网络原理</span><span class="card-category-list-count">2</span></a></li>
+                       
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href='/tags/Diary/' style='font-size:21px; color:rgb(51, 135, 32)'>Diary</a><a href='/tags/Git/' style='font-size:19px; color:rgb(164, 119, 182)'>Git</a><a href='/tags/IIS-Wampsever/' style='font-size:16px; color:rgb(194, 70, 49)'>IIS&&Wampsever</a><a href='/tags/JavaMemo/' style='font-size:20px; color:rgb(125, 151, 32)'>JavaMemo</a><a href='/tags/Mail-Sever/' style='font-size:21px; color:rgb(196, 27, 172)'>Mail Sever</a><a href='/tags/Markdown/' style='font-size:16px; color:rgb(66, 141, 146)'>Markdown</a><a href='/tags/devDoc/' style='font-size:21px; color:rgb(182, 169, 137)'>devDoc</a><a href='/tags/tech/' style='font-size:16px; color:rgb(20, 152, 22)'>tech</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/07/"><span class="card-archive-list-date">七月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">六月 2020</span><span class="card-archive-list-count">5</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">9</div></div><div class="webinfo-item"><div class="webinfo-runtime-name">已运行时间 :</div><div class="webinfo-runtime-count" id="webinfo-runtime-count" publish_date="2020/6/2 00:08:00">     </div></div><div class="webinfo-item"><div class="webinfo-site-wordcount-name">本站总字数 :</div><div class="webinfo-site-wordcount">10.4k</div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021  <i id="heartbeat" class="fa fas fa-heartbeat"></i> Wriprin</div><div class="framework-info"></div></div><head><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></head></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/search/local-search.js"></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var subtitleType = function () {
+  loadScript('https://sdk.jinrishici.com/v2/browser/jinrishici.js',function () {
+      var subtitleEffect = true
+      jinrishici.load(function (result) {
+        if (subtitleEffect) {
+          var sub = "学如逆水行舟&#44;不进则退,Learning is like rowing upstream, not to advance is to fall back".length == 0 ? new Array() : "学如逆水行舟&#44;不进则退,Learning is like rowing upstream, not to advance is to fall back".split(',')
+          var content = result.data.content
+          var both = sub.unshift(content)
+          var typed = new Typed('#subtitle', {
+            strings: sub,
+            startDelay: 300,
+            typeSpeed: 150,
+            loop: true,
+            backSpeed: 50,
+          })
+        } else {
+          document.getElementById('subtitle').innerHTML = result.data.content
+        }
+      })
+    }
+  )
+}
+window.addEventListener('load', subtitleType)
+</script><script src="/js/calendar.js"></script><script src="/js/languages.js"></script><script src="/js/xkTool.js"></script><script src="/js/wriprin.js"></script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":120,"height":260},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body></html>

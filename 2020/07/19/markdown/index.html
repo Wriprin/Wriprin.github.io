@@ -1,0 +1,287 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Markdown Memo | Wriprin's Blog</title><meta name="description" content="Markdown基本语法 PS：指令后空格才可有效。    Markdown all in one(Plug) 强调： Ctrl+B–&gt;粗体。   Ctrl+I–&gt;斜体。   列表： 1.+Enter直接换为2.； Enter+Tab切为子标题。   超链接：选中文字+ctrl+v。 插入图片：复制图片+ctrl+alt+v 标记：&#96;文字&#96; eg   区块引用：一级嵌套：&gt; &#x2F;二"><meta name="keywords" content="Markdown"><meta name="author" content="Wriprin"><meta name="copyright" content="Wriprin"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://wriprin.gitee.io/2020/07/19/markdown/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta property="og:type" content="article"><meta property="og:title" content="Markdown Memo"><meta property="og:url" content="http://wriprin.gitee.io/2020/07/19/markdown/"><meta property="og:site_name" content="Wriprin's Blog"><meta property="og:description" content="Markdown基本语法 PS：指令后空格才可有效。    Markdown all in one(Plug) 强调： Ctrl+B–&gt;粗体。   Ctrl+I–&gt;斜体。   列表： 1.+Enter直接换为2.； Enter+Tab切为子标题。   超链接：选中文字+ctrl+v。 插入图片：复制图片+ctrl+alt+v 标记：&#96;文字&#96; eg   区块引用：一级嵌套：&gt; &#x2F;二"><meta property="og:image" content="http://cdn.jsdelivr.net/gh/Wriprin/Wriprin-Gallery/Gallery/G3.jpg"><meta property="article:published_time" content="2020-07-19T00:21:00.000Z"><meta property="article:modified_time" content="2020-11-22T01:04:38.084Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="prev" title="JavaMemo" href="http://wriprin.gitee.io/2020/11/15/java-day-01/"><link rel="next" title="邮件服务器的架设与使用" href="http://wriprin.gitee.io/2020/06/08/you-jian-fu-wu-qi-de-jia-she-yu-shi-yong/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: true,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2020-11-22 09:04:38'
+}</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@master/Hexo/css/flink.min.css"><link rel="stylesheet" href="/css/wriprin.css"><link rel="stylesheet" href="/css/scroll.css"><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Wriprin's Blog" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="http://cdn.jsdelivr.net/gh/Wriprin/Wriprin-Gallery/Gallery/wriprin.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">9</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">8</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 媒体</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/bangumis/"><i class="fa-fw fab fa-youtube"></i><span> 番剧</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书单</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/box/"><i class="fa-fw fab fa-xbox"></i><span> 聚宝盒</span></a></div><div class="menus_item"><a class="site-page" href="/talk/"><i class="fa-fw far fa-comment"></i><span> 微语</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/gallery/"><i class="fa-fw far fa-image"></i><span> 相册</span></a></li><li><a class="site-page" href="/home/"><i class="fa-fw fab fa-phoenix-framework"></i><span> 主页</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw far fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">Markdown基本语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-all-in-one-Plug"><span class="toc-number">2.</span> <span class="toc-text">Markdown all in one(Plug)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE%E6%A0%87%E8%AE%B0%E5%A4%A7%E5%85%A8%F0%9F%91%89Author"><span class="toc-number">3.</span> <span class="toc-text">Markdown代码高亮标记大全👉Author</span></a></li></ol></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><header class="post-bg" id="page-header" style="background-image: url(http://cdn.jsdelivr.net/gh/Wriprin/Wriprin-Gallery/Gallery/G3.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Wriprin's Blog</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 媒体</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/bangumis/"><i class="fa-fw fab fa-youtube"></i><span> 番剧</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书单</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/box/"><i class="fa-fw fab fa-xbox"></i><span> 聚宝盒</span></a></div><div class="menus_item"><a class="site-page" href="/talk/"><i class="fa-fw far fa-comment"></i><span> 微语</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/gallery/"><i class="fa-fw far fa-image"></i><span> 相册</span></a></li><li><a class="site-page" href="/home/"><i class="fa-fw fab fa-phoenix-framework"></i><span> 主页</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw far fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">Markdown Memo</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-07-19 08:21:00"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2020-07-19</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-11-22 09:04:38"><i class="fas fa-history fa-fw"></i> 更新于 2020-11-22</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="/categories/Note/">Note</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta__icon"></i><span>字数总计:</span><span class="word-count">597</span><span class="post-meta__separator">|</span><i class="far fa-clock fa-fw post-meta__icon"></i><span>阅读时长: 3 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="far fa-eye fa-fw post-meta__icon"></i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h3 id="Markdown基本语法"><a href="#Markdown基本语法" class="headerlink" title="Markdown基本语法"></a><a target="_blank" rel="noopener" href="https://github.com/younghz/Markdown">Markdown基本语法</a></h3><blockquote>
+<p><strong>PS</strong>：指令后空格才可有效。  </p>
+</blockquote>
+<h3 id="Markdown-all-in-one-Plug"><a href="#Markdown-all-in-one-Plug" class="headerlink" title="Markdown all in one(Plug)"></a>Markdown all in one(Plug)</h3><ul>
+<li>强调：<ul>
+<li><code>Ctrl+B</code>–&gt;<strong>粗体</strong>。  </li>
+<li><code>Ctrl+I</code>–&gt;<em>斜体</em>。</li>
+</ul>
+</li>
+<li>列表：<ul>
+<li>1.+Enter直接换为2.；</li>
+<li>Enter+Tab切为子标题。</li>
+</ul>
+</li>
+<li>超链接：<code>选中文字+ctrl+v</code>。</li>
+<li>插入图片：<code>复制图片+ctrl+alt+v</code></li>
+<li>标记：`文字`<ul>
+<li><code>eg</code></li>
+</ul>
+</li>
+<li>区块引用：一级嵌套：&gt; /二级嵌套：&gt;&gt;<blockquote>
+<p>Outside</p>
+<blockquote>
+<p>Inside</p>
+</blockquote>
+</blockquote>
+</li>
+<li>代码区块：  ```+代码高亮标签+Enter+```</li>
+</ul>
+<pre class=" language-php"><code class="language-php"><span class="token keyword">echo</span><span class="token operator">&lt;</span><span class="token operator">&lt;</span><span class="token string">"Hello World"</span><span class="token punctuation">;</span></code></pre>
+<ul>
+<li>反斜杠：<code>\</code><br>  相当于反转义作用。使符号成为普通符号。</li>
+</ul>
+<h3 id="Markdown代码高亮标记大全👉Author"><a href="#Markdown代码高亮标记大全👉Author" class="headerlink" title="Markdown代码高亮标记大全👉Author"></a>Markdown代码高亮标记大全👉<a target="_blank" rel="noopener" href="http://lujianan.com/2018/10/30/markdown-syntax-highlight/">Author</a></h3><p>用  Markdown 写文档的话经常会用到代码的语法高亮，这里列出了常用的语法高亮标签，<span style="color: red;">前面是标签，括号里是对应的文件扩展名。</span></p>
+<p>Syntax Highlight  </p>
+<ul>
+<li>Cucumber (‘*.feature’)</li>
+<li>abap (‘*.abap’)</li>
+<li>ada (‘.adb’, ‘.ads’, ‘*.ada’)</li>
+<li>ahk (‘.ahk’, ‘.ahkl’)</li>
+<li>apacheconf (‘.htaccess’, ‘apache.conf’, ‘apache2.conf’)</li>
+<li>applescript (‘*.applescript’)</li>
+<li>as (‘*.as’)</li>
+<li>as3 (‘*.as’)</li>
+<li>asy (‘*.asy’)</li>
+<li>bash (‘.sh’, ‘.ksh’, ‘.bash’, ‘.ebuild’, ‘*.eclass’)</li>
+<li>bat (‘.bat’, ‘.cmd’)</li>
+<li>befunge (‘*.befunge’)</li>
+<li>blitzmax (‘*.bmx’)</li>
+<li>boo (‘*.boo’)</li>
+<li>brainfuck (‘.bf’, ‘.b’)</li>
+<li>c (‘.c’, ‘.h’)</li>
+<li>cfm (‘.cfm’, ‘.cfml’, ‘*.cfc’)</li>
+<li>cheetah (‘.tmpl’, ‘.spt’)</li>
+<li>cl (‘.cl’, ‘.lisp’, ‘*.el’)</li>
+<li>clojure (‘.clj’, ‘.cljs’)</li>
+<li>cmake (‘*.cmake’, ‘CMakeLists.txt’)</li>
+<li>coffeescript (‘*.coffee’)</li>
+<li>console (‘*.sh-session’)</li>
+<li>control (‘control’)</li>
+<li>cpp (‘.cpp’, ‘.hpp’, ‘.c++’, ‘.h++’, ‘.cc’, ‘.hh’, ‘.cxx’, ‘.hxx’, ‘*.- pde’)</li>
+<li>csharp (‘*.cs’)</li>
+<li>css (‘*.css’)</li>
+<li>cython (‘.pyx’, ‘.pxd’, ‘*.pxi’)</li>
+<li>d (‘.d’, ‘.di’)</li>
+<li>delphi (‘*.pas’)</li>
+<li>diff (‘.diff’, ‘.patch’)</li>
+<li>dpatch (‘.dpatch’, ‘.darcspatch’)</li>
+<li>duel (‘.duel’, ‘.jbst’)</li>
+<li>dylan (‘.dylan’, ‘.dyl’)</li>
+<li>erb (‘*.erb’)</li>
+<li>erl (‘*.erl-sh’)</li>
+<li>erlang (‘.erl’, ‘.hrl’)</li>
+<li>evoque (‘*.evoque’)</li>
+<li>factor (‘*.factor’)</li>
+<li>felix (‘.flx’, ‘.flxh’)</li>
+<li>fortran (‘.f’, ‘.f90’)</li>
+<li>gas (‘.s’, ‘.S’)</li>
+<li>genshi (‘*.kid’)</li>
+<li>glsl (‘.vert’, ‘.frag’, ‘*.geo’)</li>
+<li>gnuplot (‘.plot’, ‘.plt’)</li>
+<li>go (‘*.go’)</li>
+<li>groff (‘.(1234567)’, ‘.man’)</li>
+<li>haml (‘*.haml’)</li>
+<li>haskell (‘*.hs’)</li>
+<li>html (‘.html’, ‘.htm’, ‘.xhtml’, ‘.xslt’)</li>
+<li>hx (‘*.hx’)</li>
+<li>hybris (‘.hy’, ‘.hyb’)</li>
+<li>ini (‘.ini’, ‘.cfg’)</li>
+<li>io (‘*.io’)</li>
+<li>ioke (‘*.ik’)</li>
+<li>irc (‘*.weechatlog’)</li>
+<li>jade (‘*.jade’)</li>
+<li>java (‘*.java’)</li>
+<li>js (‘*.js’)</li>
+<li>jsp (‘*.jsp’)</li>
+<li>lhs (‘*.lhs’)</li>
+<li>llvm (‘*.ll’)</li>
+<li>logtalk (‘*.lgt’)</li>
+<li>lua (‘.lua’, ‘.wlua’)</li>
+<li>make (‘.mak’, ‘Makefile’, ‘makefile’, ‘Makefile.‘, ‘GNUmakefile’)</li>
+<li>mako (‘*.mao’)</li>
+<li>maql (‘*.maql’)</li>
+<li>mason (‘.mhtml’, ‘.mc’, ‘*.mi’, ‘autohandler’, ‘dhandler’)</li>
+<li>markdown (‘*.md’)</li>
+<li>modelica (‘*.mo’)</li>
+<li>modula2 (‘.def’, ‘.mod’)</li>
+<li>moocode (‘*.moo’)</li>
+<li>mupad (‘*.mu’)</li>
+<li>mxml (‘*.mxml’)</li>
+<li>myghty (‘*.myt’, ‘autodelegate’)</li>
+<li>nasm (‘.asm’, ‘.ASM’)</li>
+<li>newspeak (‘*.ns2’)</li>
+<li>objdump (‘*.objdump’)</li>
+<li>objectivec (‘*.m’)</li>
+<li>objectivej (‘*.j’)</li>
+<li>ocaml (‘.ml’, ‘.mli’, ‘.mll’, ‘.mly’)</li>
+<li>ooc (‘*.ooc’)</li>
+<li>perl (‘.pl’, ‘.pm’)</li>
+<li>php (‘.php’, ‘.php(345)’)</li>
+<li>postscript (‘.ps’, ‘.eps’)</li>
+<li>pot (‘.pot’, ‘.po’)</li>
+<li>pov (‘.pov’, ‘.inc’)</li>
+<li>prolog (‘.prolog’, ‘.pro’, ‘*.pl’)</li>
+<li>properties (‘*.properties’)</li>
+<li>protobuf (‘*.proto’)</li>
+<li>py3tb (‘*.py3tb’)</li>
+<li>pytb (‘*.pytb’)</li>
+<li>python (‘.py’, ‘.pyw’, ‘.sc’, ‘SConstruct’, ‘SConscript’, ‘.tac’)</li>
+<li>rb (‘.rb’, ‘.rbw’, ‘Rakefile’, ‘.rake’, ‘.gemspec’, ‘.rbx’, ‘.duby’)</li>
+<li>rconsole (‘*.Rout’)</li>
+<li>rebol (‘.r’, ‘.r3’)</li>
+<li>redcode (‘*.cw’)</li>
+<li>rhtml (‘*.rhtml’)</li>
+<li>rst (‘.rst’, ‘.rest’)</li>
+<li>sass (‘*.sass’)</li>
+<li>scala (‘*.scala’)</li>
+<li>scaml (‘*.scaml’)</li>
+<li>scheme (‘*.scm’)</li>
+<li>scss (‘*.scss’)</li>
+<li>smalltalk (‘*.st’)</li>
+<li>smarty (‘*.tpl’)</li>
+<li>sourceslist (‘sources.list’)</li>
+<li>splus (‘.S’, ‘.R’)</li>
+<li>sql (‘*.sql’)</li>
+<li>sqlite3 (‘*.sqlite3-console’)</li>
+<li>squidconf (‘squid.conf’)</li>
+<li>ssp (‘*.ssp’)</li>
+<li>tcl (‘*.tcl’)</li>
+<li>tcsh (‘.tcsh’, ‘.csh’)</li>
+<li>tex (‘.tex’, ‘.aux’, ‘*.toc’)</li>
+<li>text (‘*.txt’)</li>
+<li>v (‘.v’, ‘.sv’)</li>
+<li>vala (‘.vala’, ‘.vapi’)</li>
+<li>vbnet (‘.vb’, ‘.bas’)</li>
+<li>velocity (‘.vm’, ‘.fhtml’)</li>
+<li>vim (‘*.vim’, ‘.vimrc’)</li>
+<li>xml (‘.xml’, ‘.xsl’, ‘.rss’, ‘.xslt’, ‘.xsd’, ‘.wsdl’)</li>
+<li>xquery (‘.xqy’, ‘.xquery’)</li>
+<li>xslt (‘.xsl’, ‘.xslt’)</li>
+<li>yaml (‘.yaml’, ‘.yml’)</li>
+</ul>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Wriprin</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://wriprin.gitee.io/2020/07/19/markdown/">http://wriprin.gitee.io/2020/07/19/markdown/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://wriprin.gitee.io" target="_blank">Wriprin's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Markdown/">Markdown</a></div><div class="post_share"><div class="social-share" data-image="http://cdn.jsdelivr.net/gh/Wriprin/Wriprin-Gallery/Gallery/G3.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/11/15/java-day-01/"><img class="prev-cover" data-src="/true" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">JavaMemo</div></div></a></div><div class="next-post pull-right"><a href="/2020/06/08/you-jian-fu-wu-qi-de-jia-she-yu-shi-yong/"><img class="next-cover" data-src="http://cdn.jsdelivr.net/gh/Wriprin/Wriprin-Gallery/Gallery/G3.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">邮件服务器的架设与使用</div></div></a></div></nav></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021  <i id="heartbeat" class="fa fas fa-heartbeat"></i> Wriprin</div><div class="framework-info"></div></div><head><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></head></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/search/local-search.js"></script><script src="/js/calendar.js"></script><script src="/js/languages.js"></script><script src="/js/xkTool.js"></script><script src="/js/wriprin.js"></script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":120,"height":260},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body></html>
