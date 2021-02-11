@@ -7,7 +7,7 @@ if (canvasEl) {
   // var tap = ('ontouchstart' in window || navigator.msMaxTouchPoints) ? 'touchstart' : 'mousedown'
   // Fixed the mobile scroll
   var tap = 'mousedown'
-  var colors = ['#FF1461', '#18FF92', '#5A87FF', '#FBF38C']
+  var colors = ['#0266C8', '#F90101', '#F2B50F', '#00933B']
 
   var setCanvasSize = debounce(function () {
     canvasEl.width = window.innerWidth
@@ -15,7 +15,7 @@ if (canvasEl) {
     canvasEl.style.width = window.innerWidth + 'px'
     canvasEl.style.height = window.innerHeight + 'px'
     canvasEl.getContext('2d').scale(1, 1)
-  }, 500)
+  }, 200)
 
   var render = anime({
     duration: Infinity,
@@ -43,7 +43,7 @@ function updateCoords (e) {
 
 function setParticuleDirection (p) {
   var angle = anime.random(0, 360) * Math.PI / 180
-  var value = anime.random(50, 180)
+  var value = anime.random(30, 70)
   var radius = [-1, 1][anime.random(0, 1)] * value
   return {
     x: p.x + radius * Math.cos(angle),
