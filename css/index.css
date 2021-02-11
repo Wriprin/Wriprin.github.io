@@ -2679,7 +2679,7 @@ blockquote footer cite:before {
   text-align: center;
   left: 0;
   right: 0;
-  top: 10;
+  top: 0;
   bottom: 0;
 }
 #page-header {
@@ -4264,8 +4264,8 @@ img {
   vertical-align: top;
 }
 .post-reward .reward-button .reward-main .reward-all .reward-item img {
-  width: 130px;
-  height: 130px;
+  width: 200px;
+  height: 200px;
 }
 .post-reward .reward-button .reward-main .reward-all .reward-item .post-qr-code__desc {
   padding-top: 0.4rem;
