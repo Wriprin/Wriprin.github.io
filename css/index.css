@@ -2658,7 +2658,7 @@ blockquote footer cite:before {
   text-align: center;
 }
 #footer-wrap a {
-  color: #eee;
+  color: #000;
   cursor: pointer;
 }
 #footer-wrap a:hover {
@@ -2675,7 +2675,7 @@ blockquote footer cite:before {
 #footer-wrap {
   position: absolute;
   padding: 1.2rem 1rem 1.4rem;
-  color: #eee;
+  color: #fff;
   text-align: center;
   left: 0;
   right: 0;
@@ -2687,7 +2687,6 @@ blockquote footer cite:before {
 #page-header {
   position: relative;
   width: 100%;
-  background-color: #49b1f5;
   background-attachment: scroll;
   background-position: center center;
   -webkit-background-size: cover;
