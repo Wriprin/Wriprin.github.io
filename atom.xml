@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Wriprin&#39;s Blog</title>
+  <title>Wriprin&#39;s BLOG</title>
   
   <subtitle>Simple Life</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wriprin.gitee.io/"/>
-  <updated>2021-02-11T11:31:15.108Z</updated>
+  <updated>2021-02-24T09:08:42.901Z</updated>
   <id>http://wriprin.gitee.io/</id>
   
   <author>
@@ -15,6 +15,122 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux03：Vim使用及账号用户管理</title>
+    <link href="http://wriprin.gitee.io/2021/02/23/linux03-vim-shi-yong-ji-zhang-hao-yong-hu-guan-li/"/>
+    <id>http://wriprin.gitee.io/2021/02/23/linux03-vim-shi-yong-ji-zhang-hao-yong-hu-guan-li/</id>
+    <published>2021-02-22T16:41:50.000Z</published>
+    <updated>2021-02-24T09:08:42.901Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;什么是Vim编辑器&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。&lt;/p&gt;
+&lt;p&gt;简单的来说， vi
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Memo" scheme="http://wriprin.gitee.io/categories/Memo/"/>
+    
+    
+      <category term="Linux" scheme="http://wriprin.gitee.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Diary</title>
+    <link href="http://wriprin.gitee.io/2021/02/22/diary/"/>
+    <id>http://wriprin.gitee.io/2021/02/22/diary/</id>
+    <published>2021-02-22T12:08:52.000Z</published>
+    <updated>2021-02-22T12:28:29.487Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;从今天（2021.2.21）开始，学习 Java（就业路线），并记录学习的每日Memo.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;[toc]&lt;/p&gt;
+&lt;h1 id=&quot;2021-2-22&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Memo" scheme="http://wriprin.gitee.io/categories/Memo/"/>
+    
+    
+      <category term="Diary" scheme="http://wriprin.gitee.io/tags/Diary/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux02：常用的基本命令</title>
+    <link href="http://wriprin.gitee.io/2021/02/21/linux02-chang-yong-de-ji-ben-ming-ling/"/>
+    <id>http://wriprin.gitee.io/2021/02/21/linux02-chang-yong-de-ji-ben-ming-ling/</id>
+    <published>2021-02-21T15:19:14.000Z</published>
+    <updated>2021-02-21T15:25:16.156Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;目录管理&quot;&gt;&lt;a href=&quot;#目录管理&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Memo" scheme="http://wriprin.gitee.io/categories/Memo/"/>
+    
+    
+      <category term="Linux" scheme="http://wriprin.gitee.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux01：概述及环境搭建</title>
+    <link href="http://wriprin.gitee.io/2021/02/21/linux01-gai-shu-ji-huan-jing-da-jian/"/>
+    <id>http://wriprin.gitee.io/2021/02/21/linux01-gai-shu-ji-huan-jing-da-jian/</id>
+    <published>2021-02-21T14:49:18.000Z</published>
+    <updated>2021-02-21T15:03:49.253Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;入门概述&quot;&gt;&lt;a href=&quot;#入门概述&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Memo" scheme="http://wriprin.gitee.io/categories/Memo/"/>
+    
+    
+      <category term="Linux" scheme="http://wriprin.gitee.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>IPOD-Dev-Doc</title>
@@ -186,7 +302,7 @@
     <link href="http://wriprin.gitee.io/2020/06/07/66-zhuang-zhuang/"/>
     <id>http://wriprin.gitee.io/2020/06/07/66-zhuang-zhuang/</id>
     <published>2020-06-07T06:11:09.000Z</published>
-    <updated>2021-02-11T10:36:24.027Z</updated>
+    <updated>2021-08-30T15:01:54.972Z</updated>
     
     <summary type="html">
     
